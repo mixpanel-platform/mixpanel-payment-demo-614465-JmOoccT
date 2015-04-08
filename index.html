@@ -17,6 +17,13 @@
         showPercentages: true,
         firstColHeader: 'Event'
       });
+      
+      var params = {
+        from: moment().subtract(1, 'months'),
+        to: moment(),
+        length: 15
+      }
+      
       MP.api.funnel('Create Account', 'Add Payment Method', 'Make First Transaction').done(function(results) {
         console.log(results);
       });
