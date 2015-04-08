@@ -18,6 +18,15 @@
         firstColHeader: 'Event'
       });
       
+      
+      /*
+      1. Grab number of unique people (i.e. unique IDs) who have done event (1) from 1 month ago to now
+      2. Run query on second event for unique IDs
+      3. Compare unique IDs gathered in (2) to (1). If == , possible conversion
+      4. If ==, check to make sure (2) occurred after (1), but not longer than (1).timestamp + 15 days 
+      
+      */
+      
       var params = {
         from: moment().subtract(1, 'months'),
         to: moment(),
